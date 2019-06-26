@@ -1,0 +1,30 @@
+{
+    "name": "jsys/types",
+    "description": "A php library to handle basic types like string, non empty string, positive integer and so on.",
+    "authors": [
+        {
+            "name": "Ali Masood",
+            "email": "ali@jsys.pk",
+            "homepage": "https://jsys.pk",
+            "role": "Lead Developer"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^8.3@dev"
+    },
+    "autoload": {
+        "classmap": ["lib/"]
+    },
+    "config": {
+        "process-timeout": 0
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
