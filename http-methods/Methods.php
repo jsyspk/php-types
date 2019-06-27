@@ -21,8 +21,7 @@ class Method
     public const TRACE = 'TRACE';
     public const PATCH = 'PATCH';
 
-    public function Methods(){
-        $method= [self::GET, self::POST,self::PUT,self::HEAD,self::DELETE,self::CONNECT,self::OPTIONS,self::TRACE,self::PATCH];
-        return json_encode($method);
+    public function all(){
+        return json_encode([self::GET, self::POST,self::PUT,self::HEAD,self::DELETE,self::CONNECT,self::OPTIONS,self::TRACE,self::PATCH]);
     }
 }
