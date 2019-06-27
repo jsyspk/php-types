@@ -6,10 +6,10 @@
  * Time: 1:00 PM
  */
 
-namespace HTTPMethod;
+namespace Jsys\Http;
 
 
-class Methods
+class Method
 {
     public const GET = 'GET';
     public const POST = 'POST';
@@ -17,10 +17,12 @@ class Methods
     public const HEAD = 'HEAD';
     public const DELETE = 'DELETE';
     public const CONNECT = 'CONNECT';
-    public const OPTIONS = 'OPTION';
-    
+    public const OPTIONS = 'OPTIONS';
+    public const TRACE = 'TRACE';
+    public const PATCH = 'PATCH';
+
     public function Methods(){
-        $method= [self::GET, self::POST,self::PUT,self::HEAD,self::DELETE,self::CONNECT,self::OPTIONS];
+        $method= [self::GET, self::POST,self::PUT,self::HEAD,self::DELETE,self::CONNECT,self::OPTIONS,self::TRACE,self::PATCH];
         return json_encode($method);
     }
 }
