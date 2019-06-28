@@ -1,16 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hussnain Shahid
- * Date: 6/27/2019
- * Time: 1:00 PM
- */
+declare(strict_types = 1);
 
 namespace Jsys\Http;
+use \SplEnum;
 
-class Method extends \SplEnum
+class Method extends SplEnum
 {
-    const __default = self::January;
+    const __default = self::GET;
+
     public const GET = 'GET';
     public const POST = 'POST';
     public const PUT = 'PUT';
@@ -20,8 +17,4 @@ class Method extends \SplEnum
     public const OPTIONS = 'OPTIONS';
     public const TRACE = 'TRACE';
     public const PATCH = 'PATCH';
-
-    public function all(){
-        return json_encode([self::GET, self::POST,self::PUT,self::HEAD,self::DELETE,self::CONNECT,self::OPTIONS,self::TRACE,self::PATCH]);
-    }
 }
