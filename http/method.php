@@ -8,8 +8,7 @@
 
 namespace Jsys\Http;
 
-
-class Method
+class Method extends \SplEnum
 {
     public const GET = 'GET';
     public const POST = 'POST';
