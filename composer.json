@@ -19,7 +19,13 @@
         "phpunit/phpunit": "^8.3@dev"
     },
     "autoload": {
-        "classmap": ["lib/"]
+        "classmap": [
+            "lib/"
+        ],
+        "psr-4": {
+            "Jsys\\Types\\": "lib/",
+            "Jsys\\Types\\Http": "lib/http/"
+        }
     },
     "config": {
         "process-timeout": 0
