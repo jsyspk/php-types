@@ -10,6 +10,7 @@ namespace Jsys\Http;
 
 class Method extends \SplEnum
 {
+    const __default = self::January;
     public const GET = 'GET';
     public const POST = 'POST';
     public const PUT = 'PUT';
