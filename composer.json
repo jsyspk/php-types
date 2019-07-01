@@ -12,8 +12,8 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": ">=7.3.0"
-
+        "php": ">=7.3.0",
+        "ext-mbstring": "*"
     },
     "minimum-stability": "dev",
     "require-dev": {
@@ -21,10 +21,11 @@
     },
     "autoload": {
         "classmap": [
-            "lib/"
+            "lib/",
+            "jsys/"
         ],
         "psr-4": {
-            "Jsys\\Types\\": "lib/",
+            "Jsys\\Types\\": "",
             "Jsys\\Types\\Http\\": "lib/http/"
         }
     },
