@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use jsys\types\NonWhiteSpaceStringInterface;
+use jsys\types\strings\NonWhiteSpaceStringInterface;
 
 class NonWhiteSpaceString implements NonWhiteSpaceStringInterface
 {

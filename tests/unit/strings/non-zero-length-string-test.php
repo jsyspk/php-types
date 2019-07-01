@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace jsys\types;
+namespace Jsys\strings\Test;
 
 use NonZeroLengthString;
 use PHPUnit\Framework\TestCase;

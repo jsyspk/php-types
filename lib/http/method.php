@@ -6,7 +6,7 @@ use \SplEnum;
 
 class Method extends SplEnum
 {
-    const __default = self::GET;
+    public const __default = self::GET;
 
     public const GET = 'GET';
     public const POST = 'POST';

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use jsys\types\WhiteSpaceStringInterface;
+use jsys\types\strings\WhiteSpaceStringInterface;
 
 class WhiteSpaceString implements WhiteSpaceStringInterface
 {

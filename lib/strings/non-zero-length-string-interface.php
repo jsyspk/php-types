@@ -1,5 +1,5 @@
 <?php
-namespace jsys\types;
+namespace jsys\types\strings;
 
 interface NonZeroLengthStringInterface
 {

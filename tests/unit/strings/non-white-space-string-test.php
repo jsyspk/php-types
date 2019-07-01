@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace jsys\types;
+namespace Jsys\Http\Test;
 
 use NonWhiteSpaceString;
 use PHPUnit\Framework\TestCase;

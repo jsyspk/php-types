@@ -2,20 +2,19 @@
 declare(strict_types=1);
 
 
-namespace jsys\types;
+namespace jsys\types\strings;
 
 class Text implements TextInterface
 {
     private $str;
     public function __construct(string $str)
     {
-        if ($this->isEmpty($str) && $this->length($str) && $this->hasSpaces($str))
         {
             $this->str = $str;
         }
     }
 
-    private function isEmpty(string $str)
+    public function isEmpty(string $str)
     {
         if (!empty($str))
         {
@@ -25,7 +24,7 @@ class Text implements TextInterface
         return true;
     }
 
-    private function length(string $str)
+    public function length(string $str)
     {
         if(!mb_strlen($str))
         {
@@ -34,7 +33,7 @@ class Text implements TextInterface
         }
         return true;
     }
-    private function hasSpaces(string $str)
+    public function hasSpaces(string $str)
     {
         if (!ctype_space($str))
         {
@@ -44,7 +43,7 @@ class Text implements TextInterface
         return true;
     }
 
-    public function getText(): string
+    public function value(): string
     {
         return $this->str;
     }

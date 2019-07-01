@@ -14,6 +14,7 @@
     "require": {
         "php": ">=7.3.0",
         "ext-mbstring": "*"
+        "ext-spltype": "*"
     },
     "minimum-stability": "dev",
     "require-dev": {
@@ -21,12 +22,12 @@
     },
     "autoload": {
         "classmap": [
-            "lib/",
-            "jsys/"
+            "lib/"
         ],
         "psr-4": {
             "Jsys\\Types\\": "",
-            "Jsys\\Types\\Http\\": "lib/http/"
+            "Jsys\\Types\\Http\\": "lib/http/",
+            "Jsys\\Types\\Strings\\": "lib/strings/"
         }
     },
     "config": {

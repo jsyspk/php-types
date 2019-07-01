@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace jsys\types;
+namespace Jsys\strings\Test;
+use jsys\types\strings\Text;
 use PHPUnit\Framework\TestCase;
 
 
@@ -17,15 +18,16 @@ class IsEmptyTest extends TestCase
         $testString = 'hello';
         $this->expectExceptionCode(1021);
         $this->expectExceptionMessage("Non empty '$testString' is not Allowed");
-        $nonWhiteString = new \jsys\types\Text($testString);
+        $emptyString = new Text($testString);
+        $emptyString->isEmpty($testString);
     }
     public function test_must_initialize_with_empty_string()
     {
         $testString = "";
-        $nonEmptyString = new \jsys\types\Text($testString);
-        $this->assertInstanceOf('jsys\types\Text', $nonEmptyString);
-        $this->assertEquals('jsys\types\Text', get_class($nonEmptyString));
-        $this->assertEquals($nonEmptyString->getStr(), $testString, 'Both must get the same value');
+        $nonEmptyString = new Text($testString);
+        $this->assertInstanceOf('jsys\types\strings\Text', $nonEmptyString);
+        $this->assertEquals('jsys\types\strings\Text', get_class($nonEmptyString));
+        $this->assertEquals($nonEmptyString->value(), $testString, 'Both must get the same value');
     }
 
 
