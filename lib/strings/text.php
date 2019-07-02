@@ -24,14 +24,9 @@ class Text implements TextInterface
         return true;
     }
 
-    public function length(string $str)
+    public function length(string $str):int
     {
-        if(!mb_strlen($str))
-        {
-            throw new \InvalidArgumentException(''.$str.' should have some length', 1801);
-
-        }
-        return true;
+        return mb_strlen($str);
     }
     public function hasSpaces(string $str)
     {
