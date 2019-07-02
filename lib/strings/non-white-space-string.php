@@ -2,15 +2,16 @@
 declare(strict_types=1);
 
 use jsys\types\strings\NonWhiteSpaceStringInterface;
+use jsys\types\strings\TextInterface;
 
 class NonWhiteSpaceString implements NonWhiteSpaceStringInterface
 {
     private $string;
 
-    public function __construct(string  $string)
+    public function __construct(TextInterface  $string)
     {
-        if(ctype_space($string)) {
-            throw new \InvalidArgumentException("Given string '$string' contain non white space.", 1002);
+        if(ctype_space($string->value())) {
+            throw new \InvalidArgumentException("Given string ".$string->value()." contain non white space.", 1002);
         }
         $this->string = $string;
     }
@@ -20,7 +21,7 @@ class NonWhiteSpaceString implements NonWhiteSpaceStringInterface
      */
     public function value(): string
     {
-       return $this->string;
+        return $this->string->value();
     }
 
 }

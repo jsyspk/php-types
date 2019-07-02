@@ -1,16 +1,17 @@
 <?php
 declare(strict_types=1);
-use jsys\types\strings\ZeroLengthStringInterface;
 
+use jsys\types\strings\ZeroLengthStringInterface;
+use jsys\types\strings\TextInterface;
 class ZeroLengthString implements ZeroLengthStringInterface
 {
     private $string;
 
-    public function __construct(string $string)
+    public function __construct(TextInterface $string)
     {
-        if (mb_strlen($string) != 0) {
+        if (mb_strlen($string->value()) != 0) {
 
-            throw new \InvalidArgumentException("given string '$string' is not empty.", 420);
+            throw new \InvalidArgumentException("given string ".$string->value()." is not empty.", 420);
         }
         $this->string = $string;
     }
@@ -20,7 +21,7 @@ class ZeroLengthString implements ZeroLengthStringInterface
      */
     public function value(): string
     {
-        return $this->string;
+        return $this->string->value();
     }
 
 }

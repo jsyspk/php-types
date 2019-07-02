@@ -14,7 +14,7 @@ class Text implements TextInterface
         }
     }
 
-    public function isEmpty(string $str)
+    public function isEmpty(string $str):bool
     {
         if (!empty($str))
         {
@@ -51,7 +51,7 @@ class Text implements TextInterface
     /**
      * @return string
      */
-    public function getStr(): string
+    public function __toString(): string
     {
         return $this->str;
     }

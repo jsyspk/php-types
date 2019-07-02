@@ -1,15 +1,16 @@
 <?php
 declare(strict_types=1);
 use jsys\types\strings\NonZeroLengthStringInterface;
+use jsys\types\strings\TextInterface;
 
 class NonZeroLengthString implements NonZeroLengthStringInterface
 {
     private $string;
 
-    public function __construct(string $string)
+    public function __construct(TextInterface $string)
     {
-        if (mb_strlen($string) == 0) {
-            throw new \InvalidArgumentException("Given string '$string' is empty.", 1001);
+        if (mb_strlen($string->value()) == 0) {
+            throw new \InvalidArgumentException("Given string ".$string->value()." is empty.", 1001);
         }
         $this->string = $string;
     }
@@ -19,7 +20,7 @@ class NonZeroLengthString implements NonZeroLengthStringInterface
      */
     public function value(): string
     {
-        return $this->string;
+        return $this->string->value();
     }
 
 }

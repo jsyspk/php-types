@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Jsys\strings\Test;
 
+use jsys\types\strings\Text;
 use ZeroLengthString;
 use PHPUnit\Framework\TestCase;
 
@@ -16,19 +17,19 @@ class ZeroLengthStringTest extends TestCase
 
     public function test_must_not_initialize_with_non_empty_string_parameter()
     {
-        $testString = 'some data';
+        $testString = new Text('some data');
         $this->expectExceptionCode(420);
-        $this->expectExceptionMessage("given string '$testString' is not empty.");
+        $this->expectExceptionMessage("given string ".$testString->value()." is not empty.");
         $nonEmptyStr = new ZeroLengthString($testString);
     }
 
     public function test_can_initialize_with_empty_string_parameter()
     {
-        $testString = '';
+        $testString = new Text("");
         $emptyStr = new ZeroLengthString($testString);
         $this->assertInstanceOf('ZeroLengthString', $emptyStr);
         $this->assertEquals('ZeroLengthString', get_class($emptyStr));
-        $this->assertEquals($emptyStr->value(), $testString, 'Both must get the same value');
+        $this->assertEquals($emptyStr->value(), $testString->value(), 'Both must get the same value');
     }
 
     public function tearDown(): void

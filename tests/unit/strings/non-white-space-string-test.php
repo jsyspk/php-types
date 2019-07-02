@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Jsys\Http\Test;
 
+use jsys\types\strings\Text;
 use NonWhiteSpaceString;
 use PHPUnit\Framework\TestCase;
 
@@ -16,19 +17,19 @@ class NonWhiteSpaceStringTest extends TestCase
 
     public function test_must_not_initialize_with_white_space_string()
         {
-        $testString = ' ';
+        $testString = new Text(" ");
         $this->expectExceptionCode(1002);
-        $this->expectExceptionMessage("Given string '$testString' contain non white space.");
+        $this->expectExceptionMessage("Given string ".$testString->value()." contain non white space.");
         $nonWhiteString = new NonWhiteSpaceString($testString);
     }
 
     public function test_can_initialize_with_non_white_space_string()
     {
-        $testString = '';
+        $testString = new Text("");
         $nonWhiteSpaceString = new NonWhiteSpaceString($testString);
         $this->assertInstanceOf('NonWhiteSpaceString', $nonWhiteSpaceString);
         $this->assertEquals('NonWhiteSpaceString', get_class($nonWhiteSpaceString));
-        $this->assertEquals($nonWhiteSpaceString->value(), $testString, 'Both must get the same value');
+        $this->assertEquals($nonWhiteSpaceString->value(), $testString->value(), 'Both must get the same value');
     }
 
     public function tearDown(): void
