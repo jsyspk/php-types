@@ -6,7 +6,7 @@ use jsys\types\strings\Text;
 use PHPUnit\Framework\TestCase;
 
 
-class HasSpacesTest extends TestCase
+class IsSpaceTest extends TestCase
 {
     public function setUp(): void
     {
@@ -19,12 +19,13 @@ class HasSpacesTest extends TestCase
         $this->expectExceptionCode(1023);
         $this->expectExceptionMessage("Given '$testString' has no space");
         $spaces = new Text($testString);
-        $spaces->hasSpaces($testString);
+        $spaces->isSpace($testString);
     }
     public function test_must_initialize_with_some_space()
     {
-        $testString = "  ";
+        $testString = " ";
         $spaces = new Text($testString);
+        $spaces->isSpace($testString);
         $this->assertInstanceOf('jsys\types\strings\Text', $spaces);
         $this->assertEquals('jsys\types\strings\Text', get_class($spaces));
         $this->assertEquals($spaces->value(), $testString, 'Both must get the same value');

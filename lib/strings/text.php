@@ -28,7 +28,17 @@ class Text implements TextInterface
     {
         return mb_strlen($str);
     }
-    public function hasSpaces(string $str)
+    public function hasSpace(string $str)
+    {
+        if (!strpos($str," "))
+        {
+            throw new \InvalidArgumentException("Given '$str' has atleast one space", 1027);
+
+        }
+        return true;
+    }
+
+    public function isSpace(string $str)
     {
         if (!ctype_space($str))
         {
