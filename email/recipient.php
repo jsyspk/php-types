@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hussnain Shahid
- * Date: 6/28/2019
- * Time: 9:28 AM
- */
 declare(strict_types=1);
 
 namespace jsys\types\email;
