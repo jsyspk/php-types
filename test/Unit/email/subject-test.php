@@ -40,7 +40,7 @@ class SubjectTest extends TestCase
         $this->assertEquals('jsys\types\email\Subject', get_class($emailSubject));
         $this->assertEquals($emailSubject->getSubject(), $actual, 'Both must get the same value');
     }
-    public function test_must_not_initialize_with_email_subject_each_line_greater_than_998_characters()
+    public function test_must_initialize_with_email_subject_each_line_greater_than_998_characters()
     {
         $actual = str_repeat("a", 990);
         echo <<<EOT
