@@ -24,10 +24,11 @@ class IsEmptyTest extends TestCase
     public function test_must_initialize_with_empty_string()
     {
         $testString = "";
-        $nonEmptyString = new Text($testString);
-        $this->assertInstanceOf('jsys\types\strings\Text', $nonEmptyString);
-        $this->assertEquals('jsys\types\strings\Text', get_class($nonEmptyString));
-        $this->assertEquals($nonEmptyString->value(), $testString, 'Both must get the same value');
+        $emptyString = new Text($testString);
+        $emptyString->isEmpty($testString);
+        $this->assertInstanceOf('jsys\types\strings\Text', $emptyString);
+        $this->assertEquals('jsys\types\strings\Text', get_class($emptyString));
+        $this->assertEquals($emptyString->value(), $testString, 'Both must get the same value');
     }
 
 
