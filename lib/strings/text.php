@@ -14,12 +14,7 @@ class Text implements TextInterface
 
     public function isEmpty():bool
     {
-        if (empty($this->str))
-        {
-            return true;
-
-        }
-        return false;
+        return empty($this->str)?true:false;
     }
 
     public function length():int
@@ -29,21 +24,12 @@ class Text implements TextInterface
 
     public function hasSpace():bool
     {
-        if (strpos($this->str," "))
-        {
-            return true;
-
-        }
-        return false;
+        return strpos($this->str," ")?true:false;
     }
 
     public function isSpace():bool
     {
-        if (ctype_space($this->str))
-        {
-            return true;
-        }
-        return false;
+        return ctype_space($this->str)?true:false;
     }
 
     public function value(): string
