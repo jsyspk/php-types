@@ -14,36 +14,36 @@ class Text implements TextInterface
 
     public function isEmpty():bool
     {
-        if (!empty($this->str))
+        if (empty($this->str))
         {
-            throw new \InvalidArgumentException("Non empty '$this->str' is not Allowed", 1021);
+            return true;
 
         }
-        return true;
+        return false;
     }
 
     public function length():int
     {
         return mb_strlen($this->str);
     }
+
     public function hasSpace():bool
     {
-        if (!strpos($this->str," "))
+        if (strpos($this->str," "))
         {
-            throw new \InvalidArgumentException("Given '$this->str' has atleast one space", 1027);
+            return true;
 
         }
-        return true;
+        return false;
     }
 
     public function isSpace():bool
     {
-        if (!ctype_space($this->str))
+        if (ctype_space($this->str))
         {
-            throw new \InvalidArgumentException("Given '$this->str' has no space", 1023);
-
+            return true;
         }
-        return true;
+        return false;
     }
 
     public function value(): string
