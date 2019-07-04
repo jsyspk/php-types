@@ -19,13 +19,13 @@ class IsEmptyTest extends TestCase
         $this->expectExceptionCode(1021);
         $this->expectExceptionMessage("Non empty '$testString' is not Allowed");
         $emptyString = new Text($testString);
-        $emptyString->isEmpty($testString);
+        $emptyString->isEmpty();
     }
     public function test_must_initialize_with_empty_string()
     {
         $testString = "";
         $emptyString = new Text($testString);
-        $emptyString->isEmpty($testString);
+        $emptyString->isEmpty();
         $this->assertInstanceOf('jsys\types\strings\Text', $emptyString);
         $this->assertEquals('jsys\types\strings\Text', get_class($emptyString));
         $this->assertEquals($emptyString->value(), $testString, 'Both must get the same value');

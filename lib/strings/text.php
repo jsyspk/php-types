@@ -9,40 +9,38 @@ class Text implements TextInterface
     private $str;
     public function __construct(string $str)
     {
-        {
             $this->str = $str;
-        }
     }
 
-    public function isEmpty(string $str):bool
+    public function isEmpty():bool
     {
-        if (!empty($str))
+        if (!empty($this->str))
         {
-            throw new \InvalidArgumentException("Non empty '$str' is not Allowed", 1021);
-
-        }
-        return true;
-    }
-
-    public function length(string $str):int
-    {
-        return mb_strlen($str);
-    }
-    public function hasSpace(string $str)
-    {
-        if (!strpos($str," "))
-        {
-            throw new \InvalidArgumentException("Given '$str' has atleast one space", 1027);
+            throw new \InvalidArgumentException("Non empty '$this->str' is not Allowed", 1021);
 
         }
         return true;
     }
 
-    public function isSpace(string $str)
+    public function length():int
     {
-        if (!ctype_space($str))
+        return mb_strlen($this->str);
+    }
+    public function hasSpace():bool
+    {
+        if (!strpos($this->str," "))
         {
-            throw new \InvalidArgumentException("Given '$str' has no space", 1023);
+            throw new \InvalidArgumentException("Given '$this->str' has atleast one space", 1027);
+
+        }
+        return true;
+    }
+
+    public function isSpace():bool
+    {
+        if (!ctype_space($this->str))
+        {
+            throw new \InvalidArgumentException("Given '$this->str' has no space", 1023);
 
         }
         return true;

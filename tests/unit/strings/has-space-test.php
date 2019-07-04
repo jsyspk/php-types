@@ -19,13 +19,13 @@ class HasSpaceTest extends TestCase
         $this->expectExceptionCode(1027);
         $this->expectExceptionMessage("Given '$testString' has atleast one space");
         $spaces = new Text($testString);
-        $spaces->hasSpace($testString);
+        $spaces->hasSpace();
     }
     public function test_must_initialize_with_some_space()
     {
         $testString = "hello world";
         $spaces = new Text($testString);
-        $spaces->hasSpace($testString);
+        $spaces->hasSpace();
         $this->assertInstanceOf('jsys\types\strings\Text', $spaces);
         $this->assertEquals('jsys\types\strings\Text', get_class($spaces));
         $this->assertEquals($spaces->value(), $testString, 'Both must get the same value');

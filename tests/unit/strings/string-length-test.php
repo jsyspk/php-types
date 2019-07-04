@@ -17,7 +17,7 @@ class StringLengthTest extends TestCase
     {
         $testString = "hello";
         $nonEmptyString = new Text($testString);
-        $nonEmptyString->length($testString);
+        $nonEmptyString->length();
         $this->assertInstanceOf('jsys\types\strings\Text', $nonEmptyString);
         $this->assertEquals('jsys\types\strings\Text', get_class($nonEmptyString));
         $this->assertEquals($nonEmptyString->value(), $testString, 'Both must get the same value');
