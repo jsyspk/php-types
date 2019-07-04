@@ -13,6 +13,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3.0",
+        "ext-mbstring": "*",
         "ext-spltype": "*"
     },
     "minimum-stability": "dev",
@@ -24,8 +25,8 @@
             "lib/"
         ],
         "psr-4": {
-            "Jsys\\Types\\": "lib/",
-            "Jsys\\Types\\Http\\": "lib/http/"
+            "Jsys\\Types\\Http\\": "lib/http/",
+            "Jsys\\Types\\Strings\\": "lib/strings/"
         }
     },
     "config": {
