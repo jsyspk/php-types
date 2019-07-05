@@ -13,8 +13,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3.0",
-        "ext-mbstring": "*",
-        "ext-spltype": "*"
+        "ext-mbstring": "*"
     },
     "minimum-stability": "dev",
     "require-dev": {
