@@ -2,9 +2,8 @@
 declare(strict_types = 1);
 
 namespace Jsys\Http;
-use \SplEnum;
 
-class Method extends SplEnum
+class Method
 {
     public const __default = self::GET;
 
