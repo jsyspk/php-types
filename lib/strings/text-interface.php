@@ -6,5 +6,3 @@ interface TextInterface
 
     public function value():string ;
 }
-
-?>
