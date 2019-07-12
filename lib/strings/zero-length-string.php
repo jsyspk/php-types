@@ -1,13 +1,12 @@
 <?php
 declare(strict_types=1);
 
-use jsys\types\strings\ZeroLengthStringInterface;
-use jsys\types\strings\TextInterface;
-class ZeroLengthString implements ZeroLengthStringInterface
+
+class ZeroLengthString
 {
     private $string;
 
-    public function __construct(TextInterface $string)
+    public function __construct(Astring $string)
     {
         if (mb_strlen($string->value()) != 0) {
 
