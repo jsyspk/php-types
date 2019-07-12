@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace jsys\types\strings;
 
-class Text implements TextInterface
+class AString implements SomeString
 {
     private $str;
     public function __construct(string $str)
